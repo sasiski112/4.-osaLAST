@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 
 class Funktsioonid
@@ -99,6 +99,7 @@ class Funktsioonid
             switch (valik)
             {
                 case "1":
+                    Console.Clear();
                     Console.WriteLine("Sisesta koostisosa: ");
                     string Uus = Console.ReadLine();
                     koostisosad.Add(Uus);
@@ -107,6 +108,7 @@ class Funktsioonid
                     break;
 
                 case "2":
+                    Console.Clear();
                     Console.WriteLine("Sisesta vana koostisosa: ");
                     string vana = Console.ReadLine();
                     Console.WriteLine("Sisesta uus koostisosa: ");
@@ -123,12 +125,14 @@ class Funktsioonid
                     }
                     break;
                     case "3":
+                    Console.Clear();
                     foreach (string koostis in koostisosad)
                     {
                         Console.WriteLine(koostis);
                     }
                     break;
                     case "0":
+                    Console.Clear();
                     return;
             } 
         }
@@ -136,16 +140,29 @@ class Funktsioonid
     public static void KülmkapiKontroll()
     {
         string path = Path.Combine(basePath, "Koostisosad.txt");
-        Console.WriteLine("Sisesta otsistav toit: ");
-        string fal = Console.ReadLine();
-        if (path.Contains(fal))
-        {
-            Console.WriteLine("Toit on külmkapis olemas!");
 
+        if (!File.Exists(path))
+        {
+            Console.WriteLine("Viga: Koostisosade faili ei leitud!");
+            return;
+        }
+
+        Console.WriteLine("Sisesta otsitav toit: ");
+        string fal = Console.ReadLine();
+
+        string failiSisu = File.ReadAllText(path);
+
+        if (failiSisu.Contains(fal, StringComparison.OrdinalIgnoreCase))
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Jah! {fal} on külmkapis olemas.");
         }
         else
         {
-            Console.WriteLine("Toit ei leitud!");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Ei, toitu '{fal}' ei leitud.");
         }
-    }  
+
+        Console.ResetColor();
+    }
 }
