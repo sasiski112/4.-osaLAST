@@ -1,0 +1,15 @@
+﻿Pizza Diabolo;Tomatikaste, mozzarella, vürtsikas salaami, tšilli;10.50
+
+Lasagne alla Bolognese;Kihtidena laotud pasta, veiseliha raguu, bešamellkaste;11.00
+
+Risotto ai Funghi;Arborio riis, metsaseened, parmesan, trühvliõli;13.50
+
+Bruschetta al Pomodoro;Röstitud sai, kirsstomatid, küüslauk, oliiviõli;5.00
+
+Insalata Caprese;Värske mozzarella, tomatid, basiilik, palsamiäädikas;7.50
+
+Fettuccine Alfredo;Lamepasta, koore-võikaste, värske parmesan;10.00
+
+Panna Cotta;Koorene tarretis, metsamarja kaste, värske piparmünt;5.50
+
+Calzone;Kokkumurtud pitsa singi, seente ja ricottaga;9.50
